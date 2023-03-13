@@ -34,15 +34,7 @@ public class PauseGame : MonoBehaviour
             }
 
         }
-        //if (isHide==true)
-        //{
-        //    if (Input.GetKeyUp(KeyCode.Escape))
-        //    {
-        //        pauseGame.gameObject.SetActive(false);
-        //        isHide = false;
-        //        FlappyBird.birdActive = FlappyBird.SetActive.Alive;
-        //    }
-        //}
+        
     }
     public void Pause()
     {

@@ -8,6 +8,7 @@ using static FlappyBird;
 public class Bird1 : MonoBehaviour
 {
     public static bool isCollider;
+
     private static int score;
     private static int hightScore;
     [SerializeField] private GameObject bird;
@@ -116,18 +117,21 @@ public class Bird1 : MonoBehaviour
         }
         if (isCollider)
         {
-            if (Mathf.Round(bird.transform.position.x) == Mathf.Round(targets[temp].transform.position.x) - 1)
-            {
-                if (bird.transform.position.y <= targets[temp].transform.position.y + 0.5f && bird.transform.position.y >= targets[temp].transform.position.y - 0.5f)
-                {
-                    FlappyBird.birdActive = SetActive.Dead;
+            //if (targets[1]!=null)
+            //{
+            //    if (Mathf.Round(bird.transform.position.x) == Mathf.Round(targets[temp].transform.position.x) - 1)
+            //    {
+            //        if (bird.transform.position.y <= targets[temp].transform.position.y + 0.5f && bird.transform.position.y >= targets[temp].transform.position.y - 0.5f)
+            //        {
+            //            FlappyBird.birdActive = SetActive.Dead;
 
-                    gameOver.gameObject.SetActive(true);
-                    //Time.timeScale = 0;
-                    Sound.instance.Hit();
+            //            gameOver.gameObject.SetActive(true);
+            //            //Time.timeScale = 0;
+            //            Sound.instance.Hit();
 
-                }
-            }
+            //        }
+            //    }
+            //}
             if ((bird.transform.position.x == Mathf.Round(wall[temp].transform.position.x) - 0.5 ||
                 bird.transform.position.x == Mathf.Round(wall[temp].transform.position.x) + 0.5) &&
                 ((bird.transform.position.y >= wall[temp].transform.position.y + 1.2f && bird.transform.position.y < 5) ||

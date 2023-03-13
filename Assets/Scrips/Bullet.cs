@@ -22,7 +22,6 @@ public class Bullet : MonoBehaviour
             if(transform.position.y <= targets[Bird1.temp].transform.position.y + 0.5f && transform.position.y >= targets[Bird1.temp].transform.position.y - 0.5f)
             {
                 targets[Bird1.temp].SetActive(false);
-
             }
         }
     }
