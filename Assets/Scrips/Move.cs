@@ -6,22 +6,16 @@ using static FlappyBird;
 
 public class Move : MonoBehaviour
 {
-    public static float speed;
+    public static Move Instance { get; set; }
+    public float speed;
     //private GameObject bird;
     [SerializeField] private GameObject[] wall;
     [SerializeField] private GameObject[] target;
-    //[SerializeField] private GameObject wall2;
-    //[SerializeField] private GameObject bird1;
-    //[SerializeField] private GameObject bird2;
-    //[SerializeField] private GameObject bird3;
-    //[SerializeField] private GameObject pointUp;
-    //[SerializeField] private GameObject pointDown;
-    // Start is called before the first frame updat
-
     
     private void Awake()
     {
         speed = 2f;
+        Instance= this;
     }
 
     // Update is called once per frame

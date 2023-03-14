@@ -13,7 +13,7 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score.text ="Score: " + Bird1.GetScore().ToString();
-        highScore.text = "Your High Score: " + Bird1.GetHighScore().ToString();
+        score.text ="Score: " + Bird1.instance.GetScore().ToString();
+        highScore.text = "Your High Score: " + Bird1.instance.GetHighScore().ToString();
     }
 }

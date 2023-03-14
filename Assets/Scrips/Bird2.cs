@@ -32,18 +32,18 @@ public class Bird2 : Bird1
         }
         if (isCoolDown && FlappyBird.birdActive == FlappyBird.SetActive.Alive)
         {
-            Move.speed = 8;
-            maxTime = 0.5f;
-            isCollider = false;
+            Move.Instance.speed = 8;
+            Bird1.instance.maxTime = 0.5f;
+            Bird1.instance.isCollider = false;
 
             imageCoolDown.fillAmount += 1 / cdTime * Time.deltaTime;
             if (imageCoolDown.fillAmount >= 1)
             {
                 imageCoolDown.fillAmount = 0;
 
-                Move.speed = 2;
-                maxTime = 2f;
-                isCollider = true;
+                Move.Instance.speed = 2;
+                Bird1.instance.maxTime = 2f;
+                Bird1.instance.isCollider = true;
 
                 isCoolDown = false;
             }

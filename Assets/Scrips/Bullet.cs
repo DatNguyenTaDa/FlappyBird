@@ -14,15 +14,19 @@ public class Bullet : MonoBehaviour
         transform.position += Vector3.right * Time.deltaTime * speedPullet;
         if (transform.position.x > 3)
         {
-            Debug.Log("ban ban");
             transform.gameObject.SetActive(false);
         }
-        if (Mathf.Round(transform.position.x) == Mathf.Round(targets[Bird1.temp].transform.position.x))
+        if (Mathf.Round(transform.position.x) == Mathf.Round(targets[Bird1.instance.temp].transform.position.x))
         {
-            if(transform.position.y <= targets[Bird1.temp].transform.position.y + 0.5f && transform.position.y >= targets[Bird1.temp].transform.position.y - 0.5f)
+            if(transform.position.y <= targets[Bird1.instance.temp].transform.position.y + 0.5f &&
+                transform.position.y >= targets[Bird1.instance.temp].transform.position.y - 0.5f)
             {
-                targets[Bird1.temp].SetActive(false);
+                {
+                    targets[Bird1.instance.temp].SetActive(false);
+                }
+                
             }
         }
+        
     }
 }

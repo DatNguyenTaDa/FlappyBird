@@ -1107,14 +1107,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5dc9170a566504ba9336d2c1c576f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCollider: 0
   bird: {fileID: 1630515609}
   jumpForce: 7
   gravity: -16
   wall: []
   targets: []
+  temp: 0
+  temp2: 0
   gameOver: {fileID: 0}
   exhaust: {fileID: 0}
   ghost: {fileID: 0}
+  maxTime: 0
   imageCoolDown: {fileID: 636617808}
   cdTime: 5
 --- !u!114 &504665623
@@ -1129,6 +1133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e7be5ef4f8a5c24f9a28ee21191386d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCollider: 0
   bird: {fileID: 1215434909}
   jumpForce: 7
   gravity: -16
@@ -1138,9 +1143,12 @@ MonoBehaviour:
   targets:
   - {fileID: 560472819}
   - {fileID: 818575541}
+  temp: 0
+  temp2: 0
   gameOver: {fileID: 754620874}
   exhaust: {fileID: 850285587}
   ghost: {fileID: 1302332653}
+  maxTime: 0
 --- !u!114 &504665624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1153,6 +1161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d96392bad65e1ea4d841b76e18da1b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
   wall:
   - {fileID: 697048227}
   - {fileID: 1172951533}
@@ -1171,14 +1180,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b5cbf6ac92b24fb49cb45aaff7b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCollider: 0
   bird: {fileID: 1108405186}
   jumpForce: 7
   gravity: -16
   wall: []
   targets: []
+  temp: 0
+  temp2: 0
   gameOver: {fileID: 0}
   exhaust: {fileID: 0}
   ghost: {fileID: 0}
+  maxTime: 0
   imageCoolDown: {fileID: 797320205}
   cdTime: 5
 --- !u!1 &519420028

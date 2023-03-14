@@ -7,25 +7,26 @@ using static FlappyBird;
 
 public class Bird1 : MonoBehaviour
 {
-    public static bool isCollider;
+    public static Bird1 instance;
+    public bool isCollider;
 
-    private static int score;
-    private static int hightScore;
+    private int score;
+    private  int hightScore;
     [SerializeField] private GameObject bird;
     [SerializeField] private float jumpForce;
     [SerializeField] private float gravity;
 
     [SerializeField] private GameObject[] wall;
     [SerializeField] private GameObject[] targets;
-    public static int temp;
-    
+    public int temp;
+
 
 
     [SerializeField] private Canvas gameOver;
     [SerializeField] private Image exhaust;
     [SerializeField] private Image ghost;
 
-    public static float maxTime;
+    public float maxTime;
     private float timer;
 
     float velocity;
@@ -36,6 +37,8 @@ public class Bird1 : MonoBehaviour
     // Update is called once per frame
     public virtual void Awake()
     {
+        instance = this;
+
         isCollider = true;
         maxTime = 2f;
         timer = 0;
@@ -73,7 +76,6 @@ public class Bird1 : MonoBehaviour
         {
             score++;
             timer = 0;
-            Debug.Log(score);
             Sound.instance.Point();
         }
         timer += Time.deltaTime;
@@ -82,13 +84,13 @@ public class Bird1 : MonoBehaviour
             Fire();
         }
     }
-    public static int GetScore()
+    public int GetScore()
     {
-        return score;
+        return instance.score;
     }
-    public static int GetHighScore()
+    public  int GetHighScore()
     {
-        return hightScore;
+        return instance.hightScore;
     }
     public void BirdMove()
     {
@@ -117,7 +119,20 @@ public class Bird1 : MonoBehaviour
         }
         if (isCollider)
         {
-            //if (targets[1]!=null)
+            if (targets[temp].activeInHierarchy == true)
+            {
+                if (Mathf.Round(bird.transform.position.x) == Mathf.Round(targets[temp].transform.position.x) - 1 &&
+                (bird.transform.position.y <= targets[temp].transform.position.y + 0.5f &&
+                bird.transform.position.y >= targets[temp].transform.position.y - 0.5f))
+                {
+                    FlappyBird.birdActive = SetActive.Dead;
+
+                    gameOver.gameObject.SetActive(true);
+                    //Time.timeScale = 0;
+                    Sound.instance.Hit();
+                }
+            }
+            //if (targets[1] != null)
             //{
             //    if (Mathf.Round(bird.transform.position.x) == Mathf.Round(targets[temp].transform.position.x) - 1)
             //    {
@@ -149,7 +164,6 @@ public class Bird1 : MonoBehaviour
             {
                 temp++;
             }
-            Debug.Log(temp);
         }
         if(temp == wall.Length)
         {
