@@ -11,9 +11,13 @@ public class Bird3 : Bird1
 
     public override void Awake()
     {
-        //inTimeSkill = timeSkill;
+        
     }
-    // Start is called before the first frame update
+    public override void Start()
+    {
+
+    }
+
     public override void Update()
     {
         base.BirdMove();
@@ -42,16 +46,4 @@ public class Bird3 : Bird1
             }
         }
     }
-    //public void Slow()
-    //{
-    //    BirdMove();
-    //    if (Input.GetKeyDown(KeyCode.E))
-    //    {
-            
-    //    }
-    //    if (Input.GetKeyUp(KeyCode.E))
-    //    {
-    //        Time.timeScale = 1f;
-    //    }
-    //}
 }

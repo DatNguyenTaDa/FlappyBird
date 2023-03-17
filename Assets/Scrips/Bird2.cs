@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Bird2 : Bird1
 {
     [SerializeField] private Image imageCoolDown;
-    [SerializeField] private float cdTime = 1f;
+    [SerializeField] private float cdTime = 0.3f;
     private bool isCoolDown = false;
     //[SerializeField] private float timeSkill = 1000;
     //private float timer = 0;
@@ -15,7 +15,13 @@ public class Bird2 : Bird1
     public override void Awake()
     {
         
+        
     }
+    public override void Start()
+    {
+        
+    }
+
     public override void Update()
     {
         base.BirdMove();
@@ -32,18 +38,18 @@ public class Bird2 : Bird1
         }
         if (isCoolDown && FlappyBird.birdActive == FlappyBird.SetActive.Alive)
         {
-            Move.Instance.speed = 8;
-            Bird1.instance.maxTime = 0.5f;
+            Move.instance.speed = 15;
+            
             Bird1.instance.isCollider = false;
 
-            imageCoolDown.fillAmount += 1 / cdTime * Time.deltaTime;
+            imageCoolDown.fillAmount += cdTime * Time.deltaTime;
             if (imageCoolDown.fillAmount >= 1)
             {
                 imageCoolDown.fillAmount = 0;
 
-                Move.Instance.speed = 2;
-                Bird1.instance.maxTime = 2f;
+                Move.instance.speed = 2;
                 Bird1.instance.isCollider = true;
+
 
                 isCoolDown = false;
             }

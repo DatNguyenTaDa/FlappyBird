@@ -4,42 +4,41 @@ using UnityEngine;
 
 public class Sound : MonoBehaviour
 {
-    public AudioSource audioSource;
     public static Sound instance;
-    public AudioClip hit;
-    public AudioClip wing;
-    public AudioClip die;
-    public AudioClip point;
+    public AudioSource hit;
+    public AudioSource wing;
+    public AudioSource die;
+    public AudioSource point;
     // Start is called before the first frame update
     private void Awake()
     {
         instance = this;
     }
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    //private void Start()
+    //{
+    //    hit = GetComponent<AudioSource>();
+    //    wing = GetComponent<AudioSource>();
+    //    die = GetComponent<AudioSource>();
+    //    point = GetComponent<AudioSource>();
+    //}
     //public void Hit()
     //{
     //    audioSource.PlayOneShot(hit);
     //}
     public void Hit()
     {
-        audioSource.PlayOneShot(hit);
+        hit.Play();
     }
     public void Wing()
     {
-        audioSource.clip = wing;
-        audioSource.Play();
+        wing.Play();
     }
     public void Die()
     {
-        audioSource.clip = die;
-        audioSource.Play();
+        die.Play();
     }
     public void Point()
     {
-        audioSource.clip = point;
-        audioSource.Play();
+        point.Play();
     }
 }

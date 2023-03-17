@@ -15,6 +15,10 @@ public class PauseGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(FlappyBird.birdActive == FlappyBird.SetActive.Dead)
+        {
+            return;
+        }
         if (FlappyBird.birdActive == FlappyBird.SetActive.Alive)
         {
             if (Input.GetKeyUp(KeyCode.Escape))
@@ -38,6 +42,10 @@ public class PauseGame : MonoBehaviour
     }
     public void Pause()
     {
+        if (FlappyBird.birdActive == FlappyBird.SetActive.Dead)
+        {
+            return;
+        }
         pauseGame.gameObject.SetActive(true);
         FlappyBird.birdActive = FlappyBird.SetActive.Dead;
     }
